@@ -119,7 +119,8 @@ const answers= [];
   
 
   /*----- cached elements  -----*/
-
+const questionContainerElement = document.getElementById('question-container')
+const answerButtonsElement = document.getElementById ('answer-buttons')
 
   /*----- event listeners -----*/
 
@@ -128,3 +129,15 @@ const answers= [];
   function createQuiz (){
 
   }
+  function nextQuestion(){
+
+  }
+  
+  function showQuestion(question){
+    questionElement.innerText = question.question
+  }
+  
+  function selectAnswer(){
+
+  }
+  
