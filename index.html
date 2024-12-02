@@ -4,11 +4,24 @@
     <main.css></main.css>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Quiz Game</title>
     <link rel="stylesheet" href="css/main.css">
     <script defer src="js/main.js"></script>
 </head>
 <body>
-    
+<div class = "container">
+ <div id="question-container" class ="hide"></div>
+ <div id = "question"> Question</div>
+ <div id = "answerButton" class="button-grid ">
+    <button class="button"> Answer 1</button>
+    <button class="button"> Answer 2</button>
+    <button class="button"> Answer 3</button>
+    <button class="button"> Answer 4</button>
+ <div class ="controls">
+ <button id = "startButton" class = "startButton button">Start</button>
+ <button id = "nextButton" class= "nextButton button">Next</button>
+ <div id="results"></div>
+ 
+ </div>   
 </body>
 </html>

@@ -112,11 +112,11 @@ const myQuestions =[
             correctAnswer: "A"
     }
     ];
+const answers= [];
 
-const answers = [C, B, A, D, A, C, A, B, B, A]
 
   /*----- state variables -----*/
-
+  
 
   /*----- cached elements  -----*/
 
@@ -125,3 +125,6 @@ const answers = [C, B, A, D, A, C, A, B, B, A]
 
 
   /*----- functions -----*/
+  function createQuiz (){
+
+  }
