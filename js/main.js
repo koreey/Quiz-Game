@@ -8,7 +8,7 @@ const myQuestions =[
             C: "Stone Cold Steve Austin", 
             D: "The Rock"
         },
-        correctAnswer: C
+        correctAnswer: "C"
     },
     {
         question: "Which WWE Hall of Famer is known for his catchphrase Woo!?" , 
@@ -19,7 +19,7 @@ const myQuestions =[
             D: "Bret Hart"
 
         },
-        correctAnswer: B
+        correctAnswer: "B"
     },
     {
          question: "What is The Rock's real name?",
@@ -30,7 +30,7 @@ const myQuestions =[
             D:"John Cena"
 
          },
-         correctAnswer: A
+         correctAnswer: "A"
     },
     {
           question: "Which wrestler is known for his signature move, the RKO?" ,
@@ -113,6 +113,7 @@ const myQuestions =[
     }
     ];
 const answers= [];
+let turn = 0;
 
 
   /*----- state variables -----*/
@@ -120,14 +121,29 @@ const answers= [];
 
   /*----- cached elements  -----*/
 const questionContainerElement = document.getElementById('question-container')
-const answerButtonsElement = document.getElementById ('answer-buttons')
-
+const answerButtonsElements =[...document.querySelectorAll(".answer-buttons")]
+const startButtonElement= document.getElementById('startButton')
+const submitButtonElement= document.getElementById('submitButton')
+const resultsContainerElement= document.getElementById('results')
+const labelA = document.querySelector('label[for="A1"]')
+const labelB = document.querySelector('label[for="A2"]')
+const labelC = document.querySelector('label[for="A3"]')
+const labelD = document.querySelector('label[for="A4"]')
+console.log(answerButtonsElements)
   /*----- event listeners -----*/
-
+startButtonElement.addEventListener('click', createQuiz)
+submitButtonElement.addEventListener('click', selectAnswer)
 
   /*----- functions -----*/
   function createQuiz (){
-
+console.log("starting")
+console.log(myQuestions[turn].answers.A)
+console
+questionContainerElement.innerText = myQuestions[turn].question
+labelA.innerText = myQuestions[turn].answers.A
+labelB.innerText = myQuestions[turn].answers.B
+labelC.innerText = myQuestions[turn].answers.C
+labelD.innerText = myQuestions[turn].answers.D
   }
   function nextQuestion(){
 
@@ -138,6 +154,6 @@ const answerButtonsElement = document.getElementById ('answer-buttons')
   }
   
   function selectAnswer(){
-
+console.log("submit")
   }
   
