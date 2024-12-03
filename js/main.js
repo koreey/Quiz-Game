@@ -113,17 +113,18 @@ const myQuestions =[
     }
     ];
 const answers= [];
-let turn = 0;
+
 
 
   /*----- state variables -----*/
-  
+  let turn = 0;
+  let selectedAnswer 
 
   /*----- cached elements  -----*/
 const questionContainerElement = document.getElementById('question-container')
 const answerButtonsElements =[...document.querySelectorAll(".answer-buttons")]
 const startButtonElement= document.getElementById('startButton')
-const submitButtonElement= document.getElementById('submitButton')
+const answerFormElement= document.getElementById('answerForm')
 const resultsContainerElement= document.getElementById('results')
 const labelA = document.querySelector('label[for="A1"]')
 const labelB = document.querySelector('label[for="A2"]')
@@ -132,7 +133,7 @@ const labelD = document.querySelector('label[for="A4"]')
 console.log(answerButtonsElements)
   /*----- event listeners -----*/
 startButtonElement.addEventListener('click', createQuiz)
-submitButtonElement.addEventListener('click', selectAnswer)
+answerFormElement.addEventListener("submit", event => selectAnswer(event))
 
   /*----- functions -----*/
   function createQuiz (){
@@ -153,7 +154,13 @@ labelD.innerText = myQuestions[turn].answers.D
     questionElement.innerText = question.question
   }
   
-  function selectAnswer(){
+  function selectAnswer(event){
+    event.preventDefault()
 console.log("submit")
+selectedAnswer = document.querySelector('input[name="answer"]:checked')
+console.log(selectedAnswer.value);
+  }
+  function checkAnswer(){
+
   }
   
