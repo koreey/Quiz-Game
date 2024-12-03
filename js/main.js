@@ -101,7 +101,7 @@ const myQuestions =[
         correctAnswer: "B"
     },
     {
-            questions: "Who won the first-ever Women's Elimination Chamber match in 2022?",
+            question: "Who won the first-ever Women's Elimination Chamber match in 2022?",
             answers: {
                 A:"Bianca Belair", 
                 B:"Rhea Ripley",
@@ -151,10 +151,15 @@ labelD.innerText = myQuestions[turn].answers.D
   }
   function nextQuestion(){
 turn++ 
+console.log(turn, typeof turn)
 resultsContainerElement.innerText = ''
+if(turn >= 10){
+    resultsContainerElement.innerText = userScore
+}
+else{
 createQuiz()
   }
-  
+}
   function showQuestion(question){
     questionElement.innerText = question.question
   }
