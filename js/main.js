@@ -112,19 +112,21 @@ const myQuestions =[
             correctAnswer: "A"
     }
     ];
-const answers= [];
 
 
+const winningScore = 7
 
   /*----- state variables -----*/
   let turn = 0;
   let selectedAnswer 
-
+  let results
+  let userScore = 0
   /*----- cached elements  -----*/
 const questionContainerElement = document.getElementById('question-container')
 const answerButtonsElements =[...document.querySelectorAll(".answer-buttons")]
 const startButtonElement= document.getElementById('startButton')
 const answerFormElement= document.getElementById('answerForm')
+const nextQuestionButtonElement = document.getElementById("nextQuestionButton")
 const resultsContainerElement= document.getElementById('results')
 const labelA = document.querySelector('label[for="A1"]')
 const labelB = document.querySelector('label[for="A2"]')
@@ -133,6 +135,7 @@ const labelD = document.querySelector('label[for="A4"]')
 console.log(answerButtonsElements)
   /*----- event listeners -----*/
 startButtonElement.addEventListener('click', createQuiz)
+nextQuestionButtonElement.addEventListener('click', nextQuestion)
 answerFormElement.addEventListener("submit", event => selectAnswer(event))
 
   /*----- functions -----*/
@@ -147,7 +150,9 @@ labelC.innerText = myQuestions[turn].answers.C
 labelD.innerText = myQuestions[turn].answers.D
   }
   function nextQuestion(){
-
+turn++ 
+resultsContainerElement.innerText = ''
+createQuiz()
   }
   
   function showQuestion(question){
@@ -159,8 +164,24 @@ labelD.innerText = myQuestions[turn].answers.D
 console.log("submit")
 selectedAnswer = document.querySelector('input[name="answer"]:checked')
 console.log(selectedAnswer.value);
+results= checkAnswer()
+showResults()
   }
   function checkAnswer(){
-
+if(selectedAnswer.value === myQuestions[turn].correctAnswer){
+   userScore++
+   console.log(userScore)
+    console.log('true')
+    return true;
+}
+console.log(false)
+return false;
   }
-  
+  function showResults(){
+    if(results){
+     resultsContainerElement.innerText = "correct"   
+    }
+    else{
+        resultsContainerElement.innerText = "Wrong Answer!"
+    }
+  }
