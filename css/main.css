@@ -1,0 +1,17 @@
+.container{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bolder;
+    font-style: normal;
+}
+.controls{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#startButton{
+    display: flex;
+    background-color: white;
+    justify-content: space-around;
+    align-items: baseline;
+   
+}

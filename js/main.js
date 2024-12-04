@@ -184,7 +184,7 @@ return false;
   }
   function showResults(){
     if(results){
-     resultsContainerElement.innerText = "correct"   
+     resultsContainerElement.innerText = "You are correct!"   
     }
     else{
         resultsContainerElement.innerText = "Wrong Answer!"
