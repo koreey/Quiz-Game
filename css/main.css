@@ -1,3 +1,10 @@
+.body{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+
+}
 .container{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: bolder;
@@ -17,5 +24,5 @@
 }
 #timerDisplay{
     display: flex;
-    background-color: red;
+
 }
