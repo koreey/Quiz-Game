@@ -116,12 +116,14 @@ const myQuestions =[
 
 const winningScore = 7
 
+
   /*----- state variables -----*/
   let turn = 0;
   let selectedAnswer 
   let results
   let userScore = 0
   let timeRemaining 
+  let timer
   
   /*----- cached elements  -----*/
 const questionContainerElement = document.getElementById('question-container')
@@ -134,32 +136,36 @@ const labelA = document.querySelector('label[for="A1"]')
 const labelB = document.querySelector('label[for="A2"]')
 const labelC = document.querySelector('label[for="A3"]')
 const labelD = document.querySelector('label[for="A4"]')
-console.log(answerButtonsElements)
+
   /*----- event listeners -----*/
-startButtonElement.addEventListener('click', createQuiz)
+startButtonElement.addEventListener('click', function (){
+init();
+});
 nextQuestionButtonElement.addEventListener('click', nextQuestion)
 answerFormElement.addEventListener("submit", event => selectAnswer(event))
 
-  /*----- functions -----*/
-  function createQuiz (){
-console.log("starting")
-console.log(myQuestions[turn].answers.A)
-console
-questionContainerElement.innerText = myQuestions[turn].question
-labelA.innerText = myQuestions[turn].answers.A
-labelB.innerText = myQuestions[turn].answers.B
-labelC.innerText = myQuestions[turn].answers.C
-labelD.innerText = myQuestions[turn].answers.D
-  }
-  function nextQuestion(){
+/*----- functions -----*/
+function init (){
+    gameTimer(10);
+    questionContainerElement.innerText = myQuestions[turn].question
+    labelA.innerText = myQuestions[turn].answers.A
+    labelB.innerText = myQuestions[turn].answers.B
+    labelC.innerText = myQuestions[turn].answers.C
+    labelD.innerText = myQuestions[turn].answers.D
+}
+
+function nextQuestion(){
 turn++ 
-console.log(turn, typeof turn)
+clearInterval(timer)
+timerDisplay.innerText = " "
 resultsContainerElement.innerText = ''
+selectedAnswer = document.querySelector('input[name="answer"]:checked') 
+selectAnswer.checked = false;
 if(turn >= 10){
     resultsContainerElement.innerText = userScore
 }
 else{
-createQuiz()
+init()
   }
 }
   function showQuestion(question){
@@ -168,20 +174,15 @@ createQuiz()
   
   function selectAnswer(event){
     event.preventDefault()
-console.log("submit")
 selectedAnswer = document.querySelector('input[name="answer"]:checked')
-console.log(selectedAnswer.value);
 results= checkAnswer()
 showResults()
   }
   function checkAnswer(){
 if(selectedAnswer.value === myQuestions[turn].correctAnswer){
    userScore++
-   console.log(userScore)
-    console.log('true')
     return true;
 }
-console.log(false)
 return false;
   }
   function showResults(){
@@ -195,11 +196,11 @@ return false;
   function gameTimer(timeRemaining){
     const timerDisplay = document.getElementById('timerDisplay');
 
-    const timer = setInterval(() => {
+    timer = setInterval(() => {
         if (timeRemaining < 0) {
             clearInterval(timer);
             timerDisplay.innerText = "Time is up!";
-            console.log("Time is up!");
+            nextQuestion();
         } else {
             timerDisplay.innerText = timeRemaining;
             timeRemaining--;
