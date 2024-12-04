@@ -121,6 +121,8 @@ const winningScore = 7
   let selectedAnswer 
   let results
   let userScore = 0
+  let timeRemaining 
+  
   /*----- cached elements  -----*/
 const questionContainerElement = document.getElementById('question-container')
 const answerButtonsElements =[...document.querySelectorAll(".answer-buttons")]
@@ -190,3 +192,17 @@ return false;
         resultsContainerElement.innerText = "Wrong Answer!"
     }
   }
+  function gameTimer(timeRemaining){
+    const timerDisplay = document.getElementById('timerDisplay');
+
+    const timer = setInterval(() => {
+        if (timeRemaining < 0) {
+            clearInterval(timer);
+            timerDisplay.innerText = "Time is up!";
+            console.log("Time is up!");
+        } else {
+            timerDisplay.innerText = timeRemaining;
+            timeRemaining--;
+        }
+    }, 1000);
+}   
