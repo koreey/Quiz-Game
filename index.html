@@ -1,46 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <main.css></main.css>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz Game</title>
-    <link rel="stylesheet" href="css/main.css">
-    <script defer src="js/main.js"></script>
+  <main.css></main.css>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Game</title>
+  <link rel="stylesheet" href="css/main.css">
+  <script defer src="js/main.js"></script>
 </head>
 <style>
 
 </style>
+
 <body>
- <p>Time Remaining: <span id="timerDisplay">10</span> </p>
-<div class = "container">
- <div id="question-container" class ="hide"> Click start to begin quiz</div>
-   <form id="answerForm">
- <div class="answers">
-<div id ="radio-container"> 
-        <input id="A1" class = "answer-buttons" type = "radio" name="answer" value="A">
-        <label for="A1"> 
-       </label> 
-        <input id="A2"  class = "answer-buttons" type = "radio" name="answer" value="B">
-        <label for="A2"> 
-       </label> 
-        <input id="A3"  class = "answer-buttons" type = "radio" name="answer" value="C">
-        <label for="A3"> 
-       </label> 
-        <input id="A4" class = "answer-buttons" type = "radio" name="answer" value="D">
-        <label for="A4"> 
-       </label> 
-       </div> 
-       
-    </div>
- 
- <div class ="controls">
- <button id = "submitButton"  class= "hide" type = "submit" submitButton btn">Submit</button>
- </div>   
-</form>
-<div class="results" id="results"></div>
-<button id ="startButton" class = "startButton  btn">Start</button>
-<button id ="nextQuestionButton" class = "nextQuestionButton btn"> Next Question</button>
-<button id ="restartQuizButton" class = "restartQuizButton btn"> Restart Quiz</button>
+  <p>Time Remaining: <span id="timerDisplay">10</span> </p>
+  <div class="container">
+    <div id="question-container" class="hide"> Click start to begin quiz</div>
+    <form id="answerForm">
+      <div class="answers">
+        <div id="radio-container">
+          <input id="A1" class="answer-buttons" type="radio" name="answer" value="A">
+          <label for="A1">
+          </label>
+          <input id="A2" class="answer-buttons" type="radio" name="answer" value="B">
+          <label for="A2">
+          </label>
+          <input id="A3" class="answer-buttons" type="radio" name="answer" value="C">
+          <label for="A3">
+          </label>
+          <input id="A4" class="answer-buttons" type="radio" name="answer" value="D">
+          <label for="A4">
+          </label>
+        </div>
+
+      </div>
+
+      <div class="controls">
+        <button id="submitButton" class="hide" type="submit" submitButton btn">Submit</button>
+      </div>
+    </form>
+    <div class="results" id="results"></div>
+    <button id="startButton" class="startButton  btn">Start</button>
+    <button id="nextQuestionButton" class="nextQuestionButton btn"> Next Question</button>
+    <button id="restartQuizButton" class="restartQuizButton btn"> Restart Quiz</button>
 </body>
+
 </html>
