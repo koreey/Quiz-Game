@@ -125,15 +125,17 @@ const startButtonElement = document.getElementById("startButton");
 const answerFormElement = document.getElementById("answerForm");
 const nextQuestionButtonElement = document.getElementById("nextQuestionButton");
 const resultsContainerElement = document.getElementById("results");
+const radioLabels = document.querySelectorAll('.radio-label');
 const labelA = document.querySelector('label[for="A1"]');
 const labelB = document.querySelector('label[for="A2"]');
 const labelC = document.querySelector('label[for="A3"]');
 const labelD = document.querySelector('label[for="A4"]');
 
 /*----- event listeners -----*/
-startButtonElement.addEventListener("click", function () {
+startButtonElement.addEventListener("click", function (){
   init();
 });
+
 nextQuestionButtonElement.addEventListener("click", nextQuestion);
 answerFormElement.addEventListener("submit", (event) => selectAnswer(event));
 
