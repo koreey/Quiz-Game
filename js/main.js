@@ -125,7 +125,6 @@ const startButtonElement = document.getElementById("startButton");
 const answerFormElement = document.getElementById("answerForm");
 const nextQuestionButtonElement = document.getElementById("nextQuestionButton");
 const resultsContainerElement = document.getElementById("results");
-const radioLabels = document.querySelectorAll('.radio-label');
 const labelA = document.querySelector('label[for="A1"]');
 const labelB = document.querySelector('label[for="A2"]');
 const labelC = document.querySelector('label[for="A3"]');
@@ -134,6 +133,7 @@ const labelD = document.querySelector('label[for="A4"]');
 /*----- event listeners -----*/
 startButtonElement.addEventListener("click", function (){
   init();
+  startButtonElement.style.display = 'none';
 });
 
 nextQuestionButtonElement.addEventListener("click", nextQuestion);
@@ -141,6 +141,8 @@ answerFormElement.addEventListener("submit", (event) => selectAnswer(event));
 
 /*----- functions -----*/
 function init() {
+  questionContainerElement.classList.remove("hide");
+  document.getElementById("radio-container").style.display = "block";
   gameTimer(10);
   questionContainerElement.innerText = myQuestions[turn].question;
   labelA.innerText = myQuestions[turn].answers.A;
