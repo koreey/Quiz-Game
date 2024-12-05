@@ -124,6 +124,7 @@ const answerButtonsElements = [...document.querySelectorAll(".answer-buttons")];
 const startButtonElement = document.getElementById("startButton");
 const answerFormElement = document.getElementById("answerForm");
 const nextQuestionButtonElement = document.getElementById("nextQuestionButton");
+const restartQuizButtonElement = document.getElementById("restartQuizButton");
 const resultsContainerElement = document.getElementById("results");
 const labelA = document.querySelector('label[for="A1"]');
 const labelB = document.querySelector('label[for="A2"]');
@@ -158,8 +159,9 @@ function nextQuestion() {
   resultsContainerElement.innerText = "";
   selectedAnswer = document.querySelector('input[name="answer"]:checked');
   selectAnswer.checked = false;
-  if (turn >= 10) {
+  if (turn >= myQuestions.length) {
     resultsContainerElement.innerText = userScore;
+    endQuiz();
   } else {
     init();
   }
@@ -176,7 +178,6 @@ function selectAnswer(event) {
 }
 function checkAnswer() {
   if (selectedAnswer.value === myQuestions[turn].correctAnswer) {
-    userScore++;
     return true;
   }
   return false;
@@ -184,12 +185,14 @@ function checkAnswer() {
 function showResults() {
   if (results) {
     resultsContainerElement.innerText = "You are correct!";
+    userScore++
   } else {
     resultsContainerElement.innerText = "Wrong Answer!";
   }
 }
 function gameTimer(timeRemaining) {
   const timerDisplay = document.getElementById("timerDisplay");
+  document.getElementById("radio-container").style.display = "block";
 
   timer = setInterval(() => {
     if (timeRemaining < 0) {
@@ -201,4 +204,23 @@ function gameTimer(timeRemaining) {
       timeRemaining--;
     }
   }, 1000);
+}
+function endQuiz(){
+  clearInterval(timer);
+
+timerDisplay.innerText = "Time's Up!";
+resultsContainerElement.innerHTML = `Quiz Over! Your final score is: ${userScore} out of ${myQuestions.length}`;
+nextQuestionButtonElement.style.display = 'none';
+const restartButton = document.createElement('button');
+restartButton.innerText = "Restart Quiz";
+restartButton.addEventListener('click', restartQuiz);
+document.body.appendChild(restartButton);
+}
+function restartQuiz() {
+  // Reset the game state
+  turn = 0;
+  userScore = 0;
+  nextQuestionButtonElement.style.display = 'block';
+  startButtonElement.style.display = 'block'; 
+  init();
 }
