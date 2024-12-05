@@ -1,7 +1,11 @@
-Quiz Game
-This is a trivia style quiz game. The topic is WWE.
+# QuizGame
+This is a trivia style quiz game. The topic is WWE. In order to win the game you must score at least 7 out of 10 points.
 
-Technologies Used:
-JavaScript
-HTML
-CSS
+## Screenshot
+
+## Technologies Used:
+* JavaScript
+* HTML
+* CSS
+
+## Getting Started:
