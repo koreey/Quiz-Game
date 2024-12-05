@@ -23,31 +23,50 @@ p{
     font-style: normal;
     display: flex;
     flex-direction: column;
+    width: 70px;
+    max-width: 80%;
+    background-color: white;
+    border-radius: 5px;
+    padding: 5px;
 }
 .controls{
     display: flex;
     justify-content: space-around;
     box-sizing:border-box;
     align-items: center;
+    border-radius: 20px;
+    padding: 10px;
+   
+    
 }
 #startButton{
     display: flex;
     background-color: white;
     box-sizing:border-box ;
     justify-content: space-between;
+    gap:10px; 
+    margin: 20px 0px;
     
 }
 #timerDisplay{
 
 }
 #submitButton{
-    display: none;  
+    display: flex;
+    background-color: white;
+    box-sizing:border-box ;
+    
+    
+     
 }
 #restartQuizButton{
     display: none;
 }
 #nextQuestionButton{
     display: flex;
+    background-color: white;
+    box-sizing:border-box ;
+    margin: 20px,0;
 }
 #radio-container {
     display: none;

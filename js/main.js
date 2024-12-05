@@ -152,6 +152,7 @@ function init() {
   labelD.innerText = myQuestions[turn].answers.D;
 }
 
+
 function nextQuestion() {
   turn++;
   clearInterval(timer);
@@ -211,15 +212,15 @@ function endQuiz(){
 timerDisplay.innerText = "Time's Up!";
 resultsContainerElement.innerHTML = `Quiz Over! Your final score is: ${userScore} out of ${myQuestions.length}`;
 nextQuestionButtonElement.style.display = 'none';
-const restartButton = document.createElement('button');
+restartButton = document.createElement('button');
 restartButton.innerText = "Restart Quiz";
 restartButton.addEventListener('click', restartQuiz);
 document.body.appendChild(restartButton);
 }
 function restartQuiz() {
-  // Reset the game state
   turn = 0;
   userScore = 0;
+  resultsContainerElement.innerHTML = " ";
   nextQuestionButtonElement.style.display = 'block';
   startButtonElement.style.display = 'block'; 
   init();
