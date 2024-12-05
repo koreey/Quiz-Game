@@ -8,7 +8,10 @@ body{
     align-items: center;
     width: 100vh;
     height: 100vh;
-    background-color: pink;
+    background-image: url('../../Planning Folder/image folder/quizGameBackground.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 p{
@@ -63,8 +66,6 @@ p{
     position: absolute;
     right: 800px;
     bottom: 340px;
-    
-    
      
 }
 #restartQuizButton{
