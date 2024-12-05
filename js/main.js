@@ -144,6 +144,8 @@ answerFormElement.addEventListener("submit", (event) => selectAnswer(event));
 function init() {
   questionContainerElement.classList.remove("hide");
   document.getElementById("radio-container").style.display = "block";
+  document.getElementById("submitButton").style.display = "block";
+  document.getElementById("nextQuestionButton").style.display = "none";
   gameTimer(10);
   questionContainerElement.innerText = myQuestions[turn].question;
   labelA.innerText = myQuestions[turn].answers.A;
@@ -190,6 +192,7 @@ function showResults() {
   } else {
     resultsContainerElement.innerText = "Wrong Answer!";
   }
+  document.getElementById("nextQuestionButton").style.display = "block";
 }
 function gameTimer(timeRemaining) {
   const timerDisplay = document.getElementById("timerDisplay");

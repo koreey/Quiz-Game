@@ -64,10 +64,9 @@ p{
 
 }
 #submitButton{
-    display: flex;
+    display: none;
     background-color: white;
     box-sizing:border-box ;
-    /* position: absolute; */
     right: 800px;
     bottom: 340px;
      
@@ -76,7 +75,7 @@ p{
     display: none;
 }
 #nextQuestionButton {
-    display: flex;
+    display: none;
     background-color: white;
     box-sizing:border-box;
     margin: 20px,0;
