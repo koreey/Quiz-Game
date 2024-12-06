@@ -8,7 +8,7 @@ body{
     align-items:center;
     border: 5px solid rgb(231, 183, 218);
     height: 100vh;
-    background-image: url('../../Planning Folder/image folder/quizGameBackground.jpg');
+    background-image: url('../../../Planning Folder/image folder/quizGameBackground.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -24,15 +24,16 @@ p{
 }    
 
 .container{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-weight:200;
+    font-family:"Dosis", sans-serif;
+    font-weight:bolder;
     font-style: normal;
+    color: rgb(229, 123, 174);
     display: flex;
     flex-direction: column;
     width: 800px;
     margin-bottom: 110px;
     max-width: 80%;
-    background-color: #F8F2DC;
+    background-color: #faf3c6;
     border-radius: 2px;
     padding: 10px;
     border: 2px solid rgb(237, 162, 213);
@@ -53,19 +54,16 @@ p{
 }
 #startButton{
     display: flex;
-    background-color: white;
+    background-color: pink;
     box-sizing:border-box ;
     justify-content: space-between;
     margin: 20px 0px;
     width: fit-content;
     
 }
-#timerDisplay{
-
-}
 #submitButton{
     display: none;
-    background-color: white;
+    background-color: rgb(229, 123, 174);
     box-sizing:border-box ;
     right: 800px;
     bottom: 340px;
@@ -76,7 +74,7 @@ p{
 }
 #nextQuestionButton {
     display: none;
-    background-color: white;
+    background-color: rgb(229, 123, 174);
     box-sizing:border-box;
     margin: 20px,0;
     width: fit-content;

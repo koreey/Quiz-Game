@@ -211,7 +211,6 @@ function gameTimer(timeRemaining) {
 }
 function endQuiz(){
   clearInterval(timer);
-
 timerDisplay.innerText = "Time's Up!";
 resultsContainerElement.innerHTML = `Quiz Over! Your final score is: ${userScore} out of ${myQuestions.length}`;
 nextQuestionButtonElement.style.display = 'none';
