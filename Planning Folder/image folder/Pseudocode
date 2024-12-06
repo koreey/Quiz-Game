@@ -1,0 +1,14 @@
+1.	Have player start the game
+a.	Display first question with multiple choice options
+b.	There will be a variable that will keep track of the current question
+c.	Questions will be retrieved from element ID
+d.	Answers will be retrieved by element ID
+
+2.	If question is correct the score will be updated
+a.	Create a variable called score 
+b.	In order to check if answers is correct create and if else statement
+c.	If answer is correct add a point to score and move to next question
+d.	If answer does not match the correct answer move to the next questions
+e.	If there are not more questions, show results (total score)
+3.	 End of game
+a.	Show player’s total score out of total number of questions

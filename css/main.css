@@ -8,7 +8,7 @@ body{
     align-items:center;
     border: 5px solid rgb(231, 183, 218);
     height: 100vh;
-    background-image: url('../../../Planning Folder/image folder/quizGameBackground.jpg');
+    background-image: url('../Planning Folder/image folder/quizGameBackground.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -37,11 +37,20 @@ p{
     border-radius: 2px;
     padding: 10px;
     border: 2px solid rgb(237, 162, 213);
+    justify-content: center;
+    align-items: center;
+}
+.answers{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
 }
 
 #answerForm{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: center;
 }
 .controls{
     display: flex;
@@ -49,6 +58,7 @@ p{
     align-items: end;
     border-radius: 30px;
     padding: 10px;
+    
    
     
 }
